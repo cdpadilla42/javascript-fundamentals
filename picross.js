@@ -10,7 +10,6 @@ function Picross(grid) {
   }
 
   function handleKeyUp(e) {
-    console.log('pressed!');
     if (e.key === 'Enter') handleSquareClick(e.currentTarget);
   }
 
