@@ -1,5 +1,6 @@
 function Picross(grid) {
-  const squares = Array.from(grid.querySelectorAll('.square'));
+  console.log(grid);
+  const squares = Array.from(grid.querySelectorAll('.grid-container .square'));
   const modal = document.querySelector('.modal');
   function openModal() {
     if (!modal.matches('.hide')) {
