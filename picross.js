@@ -29,3 +29,5 @@ function Picross(grid) {
 
 const picross1 = Picross(document.querySelector('.picross1'));
 const picross2 = Picross(document.querySelector('.picross2'));
+
+// todo Add modal

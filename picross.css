@@ -19,3 +19,30 @@
 .square.selected {
   background-color: salmon;
 }
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.247);
+  transition: opacity 0.2s ease;
+}
+
+.modal.hide {
+  opacity: 0;
+}
+
+.inner_modal {
+  width: 80%;
+  background-color: green;
+  position: absolute;
+  top: 4rem;
+  left: 10%;
+  transition: top 0.8s ease;
+}
+
+.modal.hide .inner_modal {
+  top: -100vh;
+}
