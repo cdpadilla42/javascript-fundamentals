@@ -36,11 +36,15 @@
 
 .inner_modal {
   width: 80%;
-  background-color: green;
+  background-color: salmon;
+  color: white;
+  border: 1px solid black;
   position: absolute;
   top: 4rem;
   left: 10%;
   transition: top 0.8s ease;
+  text-align: center;
+  border-radius: 5px;
 }
 
 .modal.hide .inner_modal {

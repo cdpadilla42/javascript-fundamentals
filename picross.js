@@ -1,5 +1,12 @@
 function Picross(grid) {
   const squares = Array.from(grid.querySelectorAll('.square'));
+  const modal = document.querySelector('.modal');
+  function openModal() {
+    if (!modal.matches('.hide')) {
+      console.info('modal already open');
+      return;
+    }
+  }
 
   function fillSquare(square) {
     square.classList.add('selected');
@@ -29,5 +36,3 @@ function Picross(grid) {
 
 const picross1 = Picross(document.querySelector('.picross1'));
 const picross2 = Picross(document.querySelector('.picross2'));
-
-// todo Add modal
