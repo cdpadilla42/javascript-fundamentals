@@ -2,11 +2,13 @@ function Picross(grid) {
   console.log(grid);
   const squares = Array.from(grid.querySelectorAll('.grid-container .square'));
   const modal = document.querySelector('.modal');
+  const button = grid.querySelector('button');
   function openModal() {
     if (!modal.matches('.hide')) {
       console.info('modal already open');
       return;
     }
+    modal.classList.remove('hide');
   }
 
   function fillSquare(square) {
@@ -25,6 +27,10 @@ function Picross(grid) {
     if (s.matches('.selected')) return unFillSquare(s);
     fillSquare(s);
   }
+
+  // Event Listeners
+
+  button.addEventListener('click', openModal);
 
   squares.forEach((s) => {
     s.addEventListener('click', () => handleSquareClick(s));

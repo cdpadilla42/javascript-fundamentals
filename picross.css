@@ -52,3 +52,8 @@
 .modal.hide .inner_modal {
   top: -100vh;
 }
+
+button {
+  display: block;
+  margin: 1rem auto;
+}
