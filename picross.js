@@ -33,12 +33,21 @@ function Picross(grid) {
     true,
   ];
 
+  function showMessage() {
+    if (gameWon()) {
+      modal.querySelector('h2').textContent = 'You won!';
+    } else {
+      modal.querySelector('h2').textContent = 'Not quite, keep trying!';
+    }
+  }
+
   function openModal() {
     if (!modal.matches('.hide')) {
       console.info('modal already open');
       return;
     }
     modal.classList.remove('hide');
+    showMessage();
 
     // Modal Event Binding
     modal.addEventListener('click', handleClickOutside);
@@ -88,17 +97,13 @@ function Picross(grid) {
     fillSquare(s);
   }
 
-  function checkSolution() {
-    JSON.stringify(selectedSquares) === JSON.stringify(solution)
-      ? console.log('win!')
-      : console.log('lose');
-    console.log(selectedSquares);
-    console.log(solution);
+  function gameWon() {
+    return JSON.stringify(selectedSquares) === JSON.stringify(solution);
   }
 
   // Event Listeners
 
-  button.addEventListener('click', checkSolution);
+  button.addEventListener('click', openModal);
 
   squares.forEach((s) => {
     s.addEventListener('click', () => handleSquareClick(s));
