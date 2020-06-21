@@ -57,3 +57,9 @@ button {
   display: block;
   margin: 1rem auto;
 }
+
+.inner_modal span {
+  float: right;
+  margin: 1rem;
+  cursor: pointer;
+}
