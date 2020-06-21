@@ -4,6 +4,35 @@ function Picross(grid) {
   const squares = Array.from(grid.querySelectorAll('.grid-container .square'));
   const modal = document.querySelector('.modal');
   const button = grid.querySelector('button');
+
+  let solution = [
+    true,
+    true,
+    false,
+    false,
+    false,
+    false,
+    true,
+    true,
+    true,
+    false,
+    true,
+    true,
+    true,
+    false,
+    false,
+    false,
+    false,
+    true,
+    true,
+    true,
+    true,
+    false,
+    false,
+    false,
+    true,
+  ];
+
   function openModal() {
     if (!modal.matches('.hide')) {
       console.info('modal already open');
@@ -34,13 +63,19 @@ function Picross(grid) {
     if (e.target == e.currentTarget) closeModal();
   }
 
+  function saveSquareSelection(i) {
+    if (!selectedSquares[i]) return selectedSquares.splice(i, 1, true);
+    selectedSquares.splice(i, 1, false);
+  }
+
   function fillSquare(square) {
     square.classList.add('selected');
-    console.log(square.dataset.sq);
+    saveSquareSelection(square.dataset.sq);
   }
 
   function unFillSquare(square) {
     square.classList.remove('selected');
+    saveSquareSelection(square.dataset.sq);
   }
 
   function handleKeyUp(e) {
@@ -53,9 +88,17 @@ function Picross(grid) {
     fillSquare(s);
   }
 
+  function checkSolution() {
+    JSON.stringify(selectedSquares) === JSON.stringify(solution)
+      ? console.log('win!')
+      : console.log('lose');
+    console.log(selectedSquares);
+    console.log(solution);
+  }
+
   // Event Listeners
 
-  button.addEventListener('click', openModal);
+  button.addEventListener('click', checkSolution);
 
   squares.forEach((s) => {
     s.addEventListener('click', () => handleSquareClick(s));
