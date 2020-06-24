@@ -1,0 +1,66 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: cornflowerblue;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 1rem;
+}
+
+.card {
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+.card img {
+  width: 100%;
+}
+
+.card button {
+  background-color: violet;
+  border: none;
+  padding: 0.5rem 1rem;
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.modal_outer {
+  background-color: rgba(255, 252, 93, 0.63);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.modal_inner {
+  min-width: 300px;
+  min-height: 200px;
+  max-width: 600px;
+  background-color: #fff;
+  padding: 1rem;
+  transform: translateY(-200%);
+  transition: transform 2s ease;
+}
+
+.modal_outer.open {
+  opacity: 1;
+}
+
+.modal_outer.open .modal_inner {
+  transform: translateY(0);
+}
