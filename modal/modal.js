@@ -20,6 +20,7 @@ function CardsCollection(collection) {
     let html = `<img src="${imgSrc}">
     <h2>${title}</h2>`;
 
+    ``;
     let innerModal = modal.querySelector('.modal_inner');
     innerModal.innerHTML = html;
   }
