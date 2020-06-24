@@ -19,7 +19,8 @@ body {
   padding: 1rem;
 }
 
-.card img {
+.card img,
+.modal_inner img {
   width: 100%;
 }
 

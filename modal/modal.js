@@ -4,7 +4,9 @@ function CardsCollection(collection) {
   const buttons = Array.from(collection.querySelectorAll('button'));
   const modal = document.querySelector('.modal_outer');
 
-  function openModal() {
+  function openModal(e) {
+    const card = e.currentTarget.closest('.card');
+    fillModal(card);
     modal.classList.add('open');
   }
 
@@ -12,8 +14,19 @@ function CardsCollection(collection) {
     modal.classList.remove('open');
   }
 
+  function fillModal(card) {
+    const imgSrc = card.querySelector('img').src;
+    const title = card.querySelector('h2').textContent;
+    let html = `<img src="${imgSrc}">
+    <h2>${title}</h2>`;
+
+    let innerModal = modal.querySelector('.modal_inner');
+    innerModal.innerHTML = html;
+  }
+
   function handleOutsideClick(e) {
-    if (!e.target.closest('.modal_inner')) {
+    const isOutside = !e.target.closest('.modal_inner');
+    if (isOutside) {
       closeModal();
     }
   }
