@@ -40,7 +40,15 @@ function Slider(slider) {
     addClassNames();
   }
 
+  function handleKey(e) {
+    if (document.activeElement === slides) {
+      if (e.key == 'ArrowLeft') move('back');
+      if (e.key == 'ArrowRight') move();
+    }
+  }
+
   // Event Listeners
+  window.addEventListener('keyup', handleKey);
   nextBttn.addEventListener('click', move);
   prevBttn.addEventListener('click', () => move('back'));
 
