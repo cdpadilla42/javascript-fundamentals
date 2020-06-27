@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: royalblue;
 }
@@ -18,12 +22,14 @@ body {
 .slide {
   width: 100%;
   height: 100%;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   color: white;
   font-size: 5rem;
   background-color: coral;
+  border: 3px solid white;
+  transition: transform 0.2s ease;
 }
 
 .controls {
@@ -43,15 +49,15 @@ body {
 
 .slide.current {
   display: flex;
-  position: absolute;
-  top: 0;
-  left: 0;
+  transform: translateX(0);
 }
 
 .slide.next {
   display: flex;
-  position: absolute;
-  top: 0;
-  left: 0;
-  /* TODO */
+  transform: translateX(100%);
+}
+
+.slide.prev {
+  display: flex;
+  transform: translateX(-100%);
 }
