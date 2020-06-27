@@ -1,0 +1,57 @@
+body {
+  background-color: royalblue;
+}
+
+.sliders {
+  width: 600px;
+  margin: 0 auto;
+}
+
+.slides {
+  width: 100%;
+  height: 500px;
+  border: 1px solid coral;
+  overflow: hidden;
+  position: relative;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 5rem;
+  background-color: coral;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+}
+
+.controls button {
+  padding: 0.5rem 3rem;
+  margin: 1rem;
+  background-color: #ff6961;
+  border: none;
+  border-radius: 2px;
+  color: white;
+  font-size: 2rem;
+}
+
+.slide.current {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.slide.next {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* TODO */
+}
