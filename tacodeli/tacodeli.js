@@ -1,6 +1,6 @@
 function sideMenu(menu) {
   if (!(menu instanceof Element)) {
-    throw new Error('No menu passed in');
+    throw new Error('Arguement not a menu');
   }
   const hamburgerEl = document.querySelector('.hamburger');
   const closeEl = menu.querySelector('.close');
