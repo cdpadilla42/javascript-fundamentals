@@ -1,0 +1,72 @@
+.container {
+  display: flex;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+  max-width: 1148px;
+}
+
+.logo {
+  height: 3rem;
+}
+
+.right_hand,
+.right_hand_desktop {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.fa-map-marker-alt,
+.fa-bars {
+  font-size: 2rem;
+  padding: 0 1rem;
+}
+
+.right_hand_desktop {
+  list-style: none;
+  padding: 0 1rem;
+}
+
+.nav_link {
+  display: block;
+  margin: 0 0.6rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: rgb(49, 49, 49);
+  font-weight: 800;
+  font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+  transition: color 0.3s ease;
+}
+
+.nav_link:hover {
+  color: rgb(73, 187, 224);
+}
+
+.nav__button {
+  font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+  font-weight: 800;
+  text-shadow: 0 2px 0 rgba(49, 49, 49, 0.3);
+  border-radius: 5px;
+  padding: 0.8rem 1.3rem;
+  background-color: rgb(31, 83, 131);
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.nav__button:hover {
+  background-color: rgb(73, 187, 224);
+}
+
+@media only screen and (min-width: 993px) {
+  .hide_on_med_and_up {
+    display: none;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .hide_on_med_and_down {
+    display: none;
+  }
+}

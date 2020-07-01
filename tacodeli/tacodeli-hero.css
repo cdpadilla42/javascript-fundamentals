@@ -1,0 +1,89 @@
+html {
+  font-size: 16px;
+}
+body {
+  margin: 0;
+}
+
+* {
+  box-s
+}
+
+button.hero__button {
+  margin: 0.5rem;
+}
+
+.trail {
+  height: 50vh;
+}
+
+/* todo adjust for mobile */
+
+.hero {
+  height: calc(100vh - 3rem);
+  background: url('https://vetstreet.brightspotcdn.com/dims4/default/61ede8e/2147483647/crop/0x0%2B0%2B0/resize/645x380/quality/90/?url=https%3A%2F%2Fvetstreet-brightspot.s3.amazonaws.com%2Fa5%2F187ce0a8b411e0a0d50050568d634f%2Ffile%2Fgoldendoodle-3-645mk070111.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hero__buttons_flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hero__text {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-family: 'Concert One', sans-serif;
+}
+
+.hero__main_text {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 2rem;
+}
+
+.hero__scroll_prompt {
+  display: block;
+  height: 3.5rem;
+  position: absolute;
+  bottom: 1rem;
+  background: url('./assets/scroll-down.png') no-repeat 50% 22px;
+}
+
+.hero__scroll_prompt > span:hover {
+  transition: color 0.4s ease;
+  cursor: pointer;
+}
+
+.hero__scroll_prompt > span:hover {
+  color: rgb(73, 187, 224);
+}
+
+/* TODO Convert rems and ems to px */
+
+h1.hero__text {
+  font-size: 32px;
+  text-align: center;
+}
+
+/* Font Media Queries */
+
+@media all and (min-width: 765px) {
+  h1.hero__text {
+    font-size: 64px;
+  }
+}
+
+@media all and (min-width: 992px) {
+  h1.hero__text {
+    font-size: 80px;
+  }
+}

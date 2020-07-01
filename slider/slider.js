@@ -1,5 +1,4 @@
 function Slider(slider) {
-  // DO this in three functions!
   let current;
   let next;
   let prev;
