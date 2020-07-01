@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="../html-css-foundations/buttons/reset.css" />
+    <!-- <link
+      rel="stylesheet"
+      href="../../html-css-foundations/buttons/reset.css"
+    /> -->
     <link rel="stylesheet" href="./tacodeli-hero.css" />
     <link rel="stylesheet" href="./tacodeli-buttons.css" />
     <link rel="stylesheet" href="./tacodeli-nav.css" />
+    <link rel="stylesheet" href="./mobile_nav.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap"
       rel="stylesheet"
@@ -24,8 +28,8 @@
           alt="tacodeli"
         />
         <div class="right_hand hide_on_med_and_up">
-          <i class="fas fa-map-marker-alt"></i>
-          <i class="fas fa-bars"></i>
+          <i tabindex="0" class="fas fa-map-marker-alt"></i>
+          <i tabindex="0" class="fas fa-bars hamburger"></i>
         </div>
         <ul class="right_hand_desktop hide_on_med_and_down">
           <li><a class="nav_link" href="#">Menu</a></li>
@@ -49,6 +53,18 @@
         <span class="hero__text">Scroll for more</span>
       </div>
     </div>
+    <div class="mobile_menu hide">
+      <span class="close" tabindex="0">&times;</span>
+      <ul class="mobile_menu__inner">
+        <li><a href="#">Menu</a></li>
+        <li><a href="#">Locations</a></li>
+        <li><a href="#">Catering</a></li>
+        <li><a href="#">Story</a></li>
+        <li><a href="#">Safety</a></li>
+        <li><a href="#">More</a></li>
+      </ul>
+    </div>
     <div class="trail"></div>
+    <script src="./tacodeli.js"></script>
   </body>
 </html>

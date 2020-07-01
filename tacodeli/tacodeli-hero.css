@@ -55,7 +55,7 @@ button.hero__button {
   height: 3.5rem;
   position: absolute;
   bottom: 1rem;
-  background: url('./assets/scroll-down.png') no-repeat 50% 22px;
+  /* background: url('./assets/scroll-down.png') no-repeat 50% 22px; */
 }
 
 .hero__scroll_prompt > span:hover {
@@ -66,8 +66,6 @@ button.hero__button {
 .hero__scroll_prompt > span:hover {
   color: rgb(73, 187, 224);
 }
-
-/* TODO Convert rems and ems to px */
 
 h1.hero__text {
   font-size: 32px;
