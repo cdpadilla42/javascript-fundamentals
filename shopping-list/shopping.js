@@ -26,28 +26,33 @@ function handleFormSubmit(e) {
   list.dispatchEvent(new CustomEvent('itemsUpdated'));
 }
 
-function displayItems() {
+function createCategoryEmoji(item) {
+  // find category
   let categoryEmoji;
+  switch (item.category) {
+    case 'Pastery':
+      categoryEmoji = '🥖';
+      break;
+    case 'Protein':
+      categoryEmoji = '🥩';
+      break;
+    case 'Seafood':
+      categoryEmoji = '🐠';
+      break;
+    case 'Fruit':
+      categoryEmoji = '🍏';
+      break;
+    case 'Vegetable':
+      categoryEmoji = '🥕';
+      break;
+  }
+  return categoryEmoji;
+}
+
+function displayItems() {
   const html = items
     .map((item) => {
-      // find category
-      switch (item.category) {
-        case 'Pastery':
-          categoryEmoji = '🥖';
-          break;
-        case 'Protein':
-          categoryEmoji = '🥩';
-          break;
-        case 'Seafood':
-          categoryEmoji = '🐠';
-          break;
-        case 'Fruit':
-          categoryEmoji = '🍏';
-          break;
-        case 'Vegetable':
-          categoryEmoji = '🥕';
-          break;
-      }
+      const categoryEmoji = createCategoryEmoji(item);
 
       return `<li>
         <input type="checkbox" name="complete" id="complete" value="${item.id}"
