@@ -29,5 +29,20 @@ function displayItems() {
   list.innerHTML = html;
 }
 
+function mirrorToLocalStorage() {
+  window.localStorage.setItem('items', JSON.stringify(items));
+}
+
+function checkLocalStorage() {
+  const myLocalStorage = JSON.parse(window.localStorage.getItem('items'));
+  if (myLocalStorage.length) {
+    items = myLocalStorage;
+    list.dispatchEvent(new CustomEvent('itemsUpdated'));
+  }
+}
+
 shoppingForm.addEventListener('submit', handleFormSubmit);
 list.addEventListener('itemsUpdated', displayItems);
+list.addEventListener('itemsUpdated', mirrorToLocalStorage);
+
+checkLocalStorage();
