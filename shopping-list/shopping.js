@@ -13,6 +13,7 @@ function handleFormSubmit(e) {
   };
   items.push(item);
   e.currentTarget.item.value = '';
+  list.dispatchEvent(new CustomEvent('itemsUpdated'));
 }
 
 function displayItems() {
@@ -25,7 +26,8 @@ function displayItems() {
       </li>`;
     })
     .join('');
-  console.log(html);
+  list.innerHTML = html;
 }
 
 shoppingForm.addEventListener('submit', handleFormSubmit);
+list.addEventListener('itemsUpdated', displayItems);
