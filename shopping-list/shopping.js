@@ -6,10 +6,13 @@ let items = [];
 function handleFormSubmit(e) {
   e.preventDefault();
   const name = e.currentTarget.item.value.trim();
+  const category = e.currentTarget.category.value;
+  console.log(category);
   const item = {
     name,
     id: Date.now(),
     complete: false,
+    category,
   };
   items.push(item);
   e.currentTarget.item.value = '';
@@ -17,13 +20,33 @@ function handleFormSubmit(e) {
 }
 
 function displayItems() {
+  let categoryEmoji;
   const html = items
     .map((item) => {
+      // find category
+      switch (item.category) {
+        case 'Pastery':
+          categoryEmoji = '🥖';
+          break;
+        case 'Protein':
+          categoryEmoji = '🥩';
+          break;
+        case 'Seafood':
+          categoryEmoji = '🐠';
+          break;
+        case 'Fruit':
+          categoryEmoji = '🍏';
+          break;
+        case 'Vegetable':
+          categoryEmoji = '🥕';
+          break;
+      }
+
       return `<li>
         <input type="checkbox" name="complete" id="complete" value="${item.id}"
         ${item.complete ? 'checked' : ''}
         />
-        ${item.name}
+        ${categoryEmoji} ${item.name}
         <button value="${item.id}">&times;</button>
       </li>`;
     })
