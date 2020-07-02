@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+  --primary: slateblue;
+  --primary-contrast: white;
+  --text: black;
+  --bg: white;
+  color: var(--text);
+  background-color: var(--bg);
+}
+
+h3 {
+  margin: 0;
+}
+
+nav {
+  background-color: var(--primary);
+  display: flex;
+  justify-content: space-between;
+  color: var(--primary-contrast);
+  margin-bottom: 1rem;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+}

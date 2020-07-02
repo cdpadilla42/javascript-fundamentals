@@ -85,6 +85,9 @@ function deleteItem(id) {
 }
 
 function markDone(id) {
+  // This item is a refference because when storing an object, you are
+  // storing Refference to that object, not the value of it!!
+  // That's why you can change the object from outside of the array. Neat!
   const itemRef = items.find((item) => item.id === id);
   itemRef.complete = !itemRef.complete;
   list.dispatchEvent(new CustomEvent('itemsUpdated'));
