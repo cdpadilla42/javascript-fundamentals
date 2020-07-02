@@ -15,6 +15,13 @@ function handleFormSubmit(e) {
     category,
   };
   items.push(item);
+  items.sort((a, b) => {
+    const aCat = a.category;
+    const bCat = b.category;
+    if (aCat > bCat) return 1;
+    if (aCat < bCat) return -1;
+    return 0;
+  });
   e.currentTarget.item.value = '';
   list.dispatchEvent(new CustomEvent('itemsUpdated'));
 }
