@@ -8,6 +8,13 @@ body {
   background-color: var(--bg);
 }
 
+body.dark_theme {
+  --bg: black;
+  --text: white;
+  --primary: rgb(22, 22, 22);
+  --primary-contrast: white;
+}
+
 h3 {
   margin: 0;
 }
@@ -17,10 +24,17 @@ nav {
   display: flex;
   justify-content: space-between;
   color: var(--primary-contrast);
-  margin-bottom: 1rem;
+  height: 3rem;
+  align-items: center;
+  padding: 0 3rem;
+}
+
+main {
+  padding: 3rem;
 }
 
 img {
   display: block;
   margin: 0 auto;
+  margin-bottom: 3rem;
 }
