@@ -20,7 +20,9 @@ function displayItems() {
   const html = items
     .map((item) => {
       return `<li>
-        <input type="checkbox" name="complete" id="complete" value="${item.id}"/>
+        <input type="checkbox" name="complete" id="complete" value="${item.id}"
+        ${item.complete ? 'checked' : ''}
+        />
         ${item.name}
         <button value="${item.id}">&times;</button>
       </li>`;
@@ -41,8 +43,25 @@ function checkLocalStorage() {
   }
 }
 
+function deleteItem(id) {
+  const newItems = items.filter((item) => item.id !== id);
+  items = newItems;
+  list.dispatchEvent(new CustomEvent('itemsUpdated'));
+}
+
+function markDone(id) {
+  const itemRef = items.find((item) => item.id === id);
+  itemRef.complete = !itemRef.complete;
+  list.dispatchEvent(new CustomEvent('itemsUpdated'));
+}
+
 shoppingForm.addEventListener('submit', handleFormSubmit);
 list.addEventListener('itemsUpdated', displayItems);
 list.addEventListener('itemsUpdated', mirrorToLocalStorage);
+list.addEventListener('click', (e) => {
+  const id = parseInt(e.target.value);
+  if (e.target.matches('button')) deleteItem(id);
+  if (e.target.matches('[type="checkbox"]')) markDone(id);
+});
 
 checkLocalStorage();
