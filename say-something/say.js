@@ -13,7 +13,7 @@ const possibleMessage = {
     return 'Goodbye';
   },
   nasty() {
-    return 'GO AWAY!!!';
+    return 'GO AWAY!!! Now!!!';
   },
 };
 
