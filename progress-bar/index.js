@@ -8,9 +8,12 @@ function progressBar(percent) {
 
 progressBar(50);
 
-async function progressOverTime() {
-  for (let i = 0; i <= 100; i++) {
-    progressBar(i);
-    await wait(30);
-  }
+function progressOverTime(seconds) {
+  let atPercent = 0;
+  const interval = setInterval(() => {
+    progressBar(atPercent);
+    atPercent++;
+    console.log(atPercent);
+    if (atPercent > 100) clearInterval(interval);
+  }, (seconds * 1000) / 100);
 }
