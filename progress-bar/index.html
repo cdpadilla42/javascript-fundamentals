@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Progress Bar</title>
+    <link rel="stylesheet" href="" />
+    <style>
+      .progress {
+        width: 500px;
+        height: 50px;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: stretch;
+      }
+
+      .positive {
+        width: 20%;
+        background-color: green;
+        transition: flex-basis 0.1s ease;
+      }
+
+      .space {
+        flex: 1;
+        background-color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="progress">
+      <div class="positive"></div>
+      <div class="space"></div>
+      <script src="./index.js"></script>
+    </div>
+  </body>
+</html>
