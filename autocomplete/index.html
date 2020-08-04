@@ -6,14 +6,22 @@
     <title></title>
     <link rel="stylesheet" href="" />
     <style>
+      :root {
+        --search-size: 400px;
+      }
+
       * {
         box-sizing: border-box;
       }
 
+      [name='query'] {
+        width: var(--search-size);
+      }
+
       .dropdown {
-        width: 153px;
+        width: var(--search-size);
         border: 1px solid black;
-        padding: 5px 0;
+        padding: 0;
         display: flex;
         flex-direction: column;
         align-items: stretch;
@@ -32,8 +40,8 @@
   <body>
     <form action="#">
       <input type="text" name="query" />
-      <div class="dropdown"></div>
       <button type="submit">Search</button>
+      <div class="dropdown hide"></div>
     </form>
     <script src="./index.js"></script>
   </body>

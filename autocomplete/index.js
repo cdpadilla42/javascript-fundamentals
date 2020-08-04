@@ -11,33 +11,29 @@ const dropdownEl = document.querySelector('.dropdown');
 
 function handleInput(e) {
   const input = e.currentTarget.query.value.toLowerCase();
+  if (input.length === 0) return dropdownEl.classList.add('hide');
 
   const relaventSuggestions = popularSearches.filter((search) =>
     search.toLowerCase().includes(input)
   );
 
-  if (relaventSuggestions.length > 0) {
-    console.log(relaventSuggestions);
-  } else {
-    console.log('no suggestions!');
-  }
+  displaySuggestions(relaventSuggestions);
 }
 
 function displaySuggestions(suggestions) {
+  if (suggestions.length === 0) return dropdownEl.classList.add('hide');
+  dropdownEl.innerHTML = '';
   let displays = [];
   for (let i = 0; i < 5; i++) {
-    if (!suggestions[i]) return;
+    if (!suggestions[i]) continue;
     const display = `<div class="suggestion">
       <span>${suggestions[i]}</span>
     </div>`;
     displays.push(display);
   }
   console.log(displays.join(''));
+  dropdownEl.classList.remove('hide');
   dropdownEl.insertAdjacentHTML('afterbegin', displays.join(''));
-  // create containers for the suggested text
-  // append html
 }
-
-displaySuggestions(popularSearches);
 
 form.addEventListener('input', handleInput);
