@@ -11,9 +11,9 @@ progressBar(50);
 function progressOverTime(seconds) {
   let atPercent = 0;
   const interval = setInterval(() => {
+    if (atPercent >= 100) clearInterval(interval);
     progressBar(atPercent);
     atPercent++;
     console.log(atPercent);
-    if (atPercent > 100) clearInterval(interval);
   }, (seconds * 1000) / 100);
 }
