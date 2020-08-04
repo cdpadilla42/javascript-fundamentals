@@ -31,6 +31,15 @@
         display: none;
       }
 
+      .suggestion {
+        background-color: rgba(0, 0, 0, 0);
+        border: none;
+        text-align: left;
+        font-family: inherit;
+        font-size: inherit;
+        font-weight: inherit;
+      }
+
       .suggestion:hover {
         background-color: palegoldenrod;
         cursor: pointer;
@@ -40,7 +49,7 @@
   <body>
     <form action="#">
       <input type="text" name="query" />
-      <button type="submit">Search</button>
+      <button type="submit" name="submit">Search</button>
       <div class="dropdown hide"></div>
     </form>
     <script src="./index.js"></script>
