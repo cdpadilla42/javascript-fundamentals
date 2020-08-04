@@ -27,7 +27,7 @@ function displaySuggestions(suggestions) {
   let displays = [];
   for (let i = 0; i < 5; i++) {
     if (!suggestions[i]) return;
-    const display = `<div className="suggestion">
+    const display = `<div class="suggestion">
       <span>${suggestions[i]}</span>
     </div>`;
     displays.push(display);
