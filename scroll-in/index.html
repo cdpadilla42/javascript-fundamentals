@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Scroll In</title>
+    <link rel="stylesheet" href="" />
+    <style>
+      p {
+        font-size: 2rem;
+        width: 600px;
+      }
+
+      .scroll_in {
+        color: palegoldenrod;
+        transition: transform 0.8s ease, opacity 0.5s ease;
+        transform: translateX(0);
+        opacity: 1;
+      }
+
+      .off_screen {
+        transform: translateX(-120%);
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati
+      facilis fugiat quod atque incidunt voluptatem aperiam exercitationem
+      maiores aliquam commodi adipisci necessitatibus beatae, blanditiis dolorem
+      placeat officia? Modi, ducimus at. Lorem ipsum dolor sit amet consectetur
+      adipisicing elit. Voluptate eveniet itaque magni perspiciatis dolor
+      dolorem id temporibus non consequuntur, aliquam corrupti quam nisi.
+      Suscipit, numquam. Veritatis dicta maiores quae quaerat! Lorem ipsum dolor
+      sit amet, consectetur adipisicing elit. Nostrum, amet quisquam saepe unde,
+      autem labore vero illo sed id veniam nihil voluptates perferendis. Nihil
+      libero non officia provident! Officia, eius! Lorem ipsum dolor sit amet,
+      consectetur adipisicing elit. Optio, in itaque aliquid reprehenderit
+      doloribus beatae deserunt, culpa deleniti qui corrupti eum nulla ea error
+      quos inventore consectetur? Aliquam, ipsum commodi?
+    </p>
+    <div class="activate_scroll"></div>
+    <h1 class="scroll_in off_screen">Hello there! 👋</h1>
+    <script src="./index.js"></script>
+  </body>
+</html>
