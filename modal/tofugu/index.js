@@ -8,10 +8,20 @@ function modal(outerModal) {
     if (e.currentTarget === e.target) {
       console.log('');
       outerModal.classList.add('hide');
+      yesScroll();
     }
   }
 
+  function noScroll() {
+    document.body.style.overflow = 'hidden';
+  }
+
+  function yesScroll() {
+    document.body.style.overflow = null;
+  }
+  noScroll();
   outerModal.addEventListener('click', handleClick);
 }
 
 modal(document.querySelector('.modal_outer'));
+noScroll();
