@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+}
+
+.modal_outer {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal_inner {
+  width: 550px;
+  height: 460px;
+  display: flex;
+  align-items: stretch;
+}
+
+.modal_inner > * {
+  flex: 1;
+}
+
+.modal_inner__image {
+}
+
+.modal_inner__image img {
+  height: 100%;
+  width: 100%;
+}
+
+.modal_inner__text {
+  background-color: #fff;
+}
+
+.hide {
+  display: none;
+}
