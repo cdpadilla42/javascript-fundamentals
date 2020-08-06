@@ -1,0 +1,53 @@
+body {
+  background-color: rgba(48, 49, 52, 1);
+}
+
+nav {
+  display: flex;
+  align-items: stretch;
+  width: 355px;
+  justify-content: flex-end;
+}
+
+nav:hover {
+  background-color: #262729;
+}
+
+nav a {
+  padding: 1rem;
+}
+
+nav a i {
+  color: antiquewhite;
+  font-size: 1.5rem;
+}
+
+nav a:hover i {
+  color: #dc7069;
+}
+
+.nav__user_section {
+  display: flex;
+  align-items: stretch;
+}
+
+.nav__user_section a {
+  /* padding-left: 0; */
+}
+
+.nav__user_section span {
+  align-self: center;
+  color: antiquewhite;
+}
+
+.nav__user_section > * {
+  padding: 1rem;
+}
+
+.nav__user_section span:nth-child(2) {
+  border: 1px solid slateblue;
+  padding: 0.3rem;
+  box-sizing: border-box;
+  margin: 1rem;
+  margin-top: 0.8rem;
+}
