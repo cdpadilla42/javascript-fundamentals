@@ -11,13 +11,11 @@ function handleIntersectionObserver(e) {
     document.documentElement.scrollHeight -
     document.documentElement.clientHeight;
   const percentage = window.scrollY / height;
-  const pixelValue = Math.floor(
-    document.documentElement.clientWidth * percentage
-  );
-  console.log(pixelValue);
+  // const pixelValue = Math.floor(percentage * 500);
+  // console.log(pixelValue);
 
   // add percentage to bar
-  progressFill.style.transform = `scaleX(${pixelValue})`;
+  progressFill.style.transform = `scaleX(${percentage})`;
 }
 
 document.addEventListener('scroll', handleIntersectionObserver);

@@ -16,6 +16,6 @@ body {
 
 .progress_filler {
   background-color: green;
-  flex-basis: 1px;
+  flex-basis: 100%;
   transform: scaleX(100);
 }
