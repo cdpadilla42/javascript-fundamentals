@@ -1,0 +1,20 @@
+body {
+  margin: 0;
+}
+
+.progress_bar {
+  height: 1rem;
+  background-color: grey;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+}
+
+.progress_filler {
+  background-color: green;
+  flex-basis: 20%;
+}
