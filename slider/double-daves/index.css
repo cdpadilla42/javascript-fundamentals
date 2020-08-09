@@ -11,10 +11,24 @@
 .slide {
   height: 100%;
   width: 100%;
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  display: none;
+}
+
+.current {
+  display: flex;
+}
+
+.prev {
+  display: flex;
+  transform: translateX(-100%);
+}
+
+.next {
+  display: flex;
+  transform: translateX(100%);
 }
 
 .fas {
