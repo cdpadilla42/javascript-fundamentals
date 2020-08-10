@@ -9,6 +9,28 @@ function slider(sliderEl) {
     }
   }
 
+  function toNextSlide() {
+    let current = document.querySelector('.current');
+    let prev = document.querySelector('.prev');
+    let next = document.querySelector('.next');
+
+    current.classList.remove('current');
+    next.classList.remove('next');
+    prev.classList.remove('prev');
+
+    [prev, current, next] = [
+      current,
+      next,
+      next.nextElementSibling || slides[0],
+    ];
+
+    current.classList.add('current');
+    next.classList.add('next');
+    prev.classList.add('prev');
+  }
+
+  window.toNextSlide = toNextSlide;
+
   initializeSlides();
 }
 
