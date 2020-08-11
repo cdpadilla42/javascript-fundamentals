@@ -36,6 +36,22 @@ body {
   height: 100%;
   background-image: url('https://picsum.photos/1000');
   background-size: cover;
+  display: none;
+  transition: transform 0.4s ease;
+}
+
+.prev {
+  display: block;
+  transform: translateX(-100%);
+}
+
+.current {
+  display: block;
+  transform: translateX(0);
+}
+.next {
+  display: block;
+  transform: translateX(100%);
 }
 
 .left_arrow {
