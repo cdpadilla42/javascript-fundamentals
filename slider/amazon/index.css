@@ -9,6 +9,7 @@ body {
 
 .slider {
   width: 100vw;
+  min-width: 996px;
   height: 700px;
   overflow: hidden;
   position: relative;
@@ -49,4 +50,22 @@ body {
   z-index: 2;
   top: 20%;
   right: 1rem;
+}
+
+.items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: auto;
+  grid-gap: 1rem;
+  width: 100vw;
+  min-width: 996px;
+  position: absolute;
+  top: 200px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  width: 100%;
 }
