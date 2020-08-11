@@ -29,7 +29,28 @@ function slider(sliderEl) {
     prev.classList.add('prev');
   }
 
+  function toPrevSlide() {
+    let current = document.querySelector('.current');
+    let prev = document.querySelector('.prev');
+    let next = document.querySelector('.next');
+
+    current.classList.remove('current');
+    next.classList.remove('next');
+    prev.classList.remove('prev');
+
+    [prev, current, next] = [
+      prev.previousElementSibling || slides[slides.length - 1],
+      prev,
+      current,
+    ];
+
+    current.classList.add('current');
+    next.classList.add('next');
+    prev.classList.add('prev');
+  }
+
   window.toNextSlide = toNextSlide;
+  window.toPrevSlide = toPrevSlide;
 
   initializeSlides();
 }
