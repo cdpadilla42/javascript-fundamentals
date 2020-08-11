@@ -1,5 +1,9 @@
 function slider(sliderEl) {
   const slides = Array.from(sliderEl.querySelectorAll('.slide'));
+  const leftArrow = document.querySelector('.left_arrow');
+  const rightArrow = document.querySelector('.right_arrow');
+  console.log('left arrow', leftArrow);
+  console.log('right arrow', rightArrow);
 
   function initializeSlides() {
     if (!sliderEl.querySelector('.current')) {
@@ -49,10 +53,17 @@ function slider(sliderEl) {
     prev.classList.add('prev');
   }
 
-  window.toNextSlide = toNextSlide;
-  window.toPrevSlide = toPrevSlide;
+  function handleKey(e) {
+    const key = e.key;
+    if (key === 'ArrowLeft') toPrevSlide();
+    if (key === 'ArrowRight') toNextSlide();
+  }
 
   initializeSlides();
+
+  leftArrow.addEventListener('click', toPrevSlide);
+  rightArrow.addEventListener('click', toNextSlide);
+  window.addEventListener('keyup', handleKey);
 }
 
 slider(document.querySelector('.slider'));

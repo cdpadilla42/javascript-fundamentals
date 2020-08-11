@@ -37,19 +37,24 @@
 
 .fas {
   color: grey;
+  font-size: 1.5rem;
 }
 
 .left_arrow {
   position: absolute;
   top: 50%;
+  left: 1rem;
+  z-index: 2;
 }
 .right_arrow {
   position: absolute;
   top: 50%;
-  right: 0;
+  right: 1rem;
+  z-index: 2;
 }
 .down_arrow {
   position: absolute;
-  bottom: 0;
+  bottom: 1rem;
   left: 50%;
+  z-index: 2;
 }
