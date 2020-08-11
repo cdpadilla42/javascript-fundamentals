@@ -41,14 +41,14 @@ body {
 .left_arrow {
   position: absolute;
   z-index: 2;
-  top: 20%;
+  top: 15%;
   left: 1rem;
 }
 
 .right_arrow {
   position: absolute;
   z-index: 2;
-  top: 20%;
+  top: 15%;
   right: 1rem;
 }
 
