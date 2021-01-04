@@ -1,0 +1,46 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider {
+  width: 500px;
+  height: 500px;
+  border: 1px solid grey;
+  position: relative;
+  overflow: hidden;
+}
+
+.left-arrow {
+  position: absolute;
+  top: 50%;
+  left: 0;
+}
+
+.right-arrow {
+  position: absolute;
+  top: 50%;
+  right: 0;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  display: none;
+  background-color: palegoldenrod;
+}
+
+.current {
+  display: block;
+}
+
+.prev {
+  display: block;
+  transform: translateX(-100%);
+}
+
+.prev {
+  display: block;
+  transform: translateX(100%);
+}
