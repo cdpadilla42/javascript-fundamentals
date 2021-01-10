@@ -79,11 +79,15 @@
       const inputs = document.querySelectorAll('.controls input');
 
       function handleUpdate(e) {
-        console.log(e.currentTarget.value);
+        const sufix = e.currentTarget.dataset.sizing || '';
+        const value = `${e.currentTarget.value}${sufix}`;
+        const name = e.currentTarget.name;
+        document.documentElement.style.setProperty(`--${name}`, value);
       }
 
       inputs.forEach((input) => {
         input.addEventListener('change', handleUpdate);
+        input.addEventListener('mousemove', handleUpdate);
       });
     </script>
   </body>
